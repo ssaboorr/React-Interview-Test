@@ -4,8 +4,9 @@ import {
   PRODUCT_ASSIGN_SUPPLIER_FAIL,
   PRODUCT_ASSIGN_SUPPLIER_RESET,
 } from "../Constants/productConstants";
+import products from "../data/productData";
 
-export const productReducer = (state = {}, action) => {
+export const productReducer = (state = { products: [] }, action) => {
   switch (action.type) {
     case PRODUCT_ASSIGN_SUPPLIER_REQUEST:
       return { loading: true };
@@ -14,7 +15,7 @@ export const productReducer = (state = {}, action) => {
     case PRODUCT_ASSIGN_SUPPLIER_FAIL:
       return { loading: false, error: action.payload };
     case PRODUCT_ASSIGN_SUPPLIER_RESET:
-      return {};
+      return { products: [] };
     default:
       return state;
   }

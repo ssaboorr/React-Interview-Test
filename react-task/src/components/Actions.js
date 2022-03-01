@@ -12,6 +12,7 @@ const Actions = ({ title, disabled }) => {
       justifyContent="center"
       alignItems="center"
       bgColor={disabled ? "gray.300" : "gray.800"}
+      _hover={{ bgColor: "gray.600" }}
     >
       <Heading fontSize="lg" color="white">
         {title}

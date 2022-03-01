@@ -39,7 +39,7 @@ function AssignModal() {
 
   return (
     <>
-      <Link onClick={onOpen}>
+      <Link _hover={{ textDecor: "none" }} onClick={onOpen}>
         <Actions title="Assign Supplier" />
       </Link>
       <Modal size="6xl" isOpen={isOpen} onClose={onClose}>
@@ -49,7 +49,7 @@ function AssignModal() {
           <ModalCloseButton />
           <ModalBody>
             <Flex>
-              <ProductTable data={prod} />
+              <ProductTable />
             </Flex>
           </ModalBody>
 

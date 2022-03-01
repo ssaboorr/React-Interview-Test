@@ -8,13 +8,22 @@ import orderData from "../data/orderData";
 import products from "../data/productData";
 import { useDispatch } from "react-redux";
 import { PRODUCT_ASSIGN_SUPPLIER_RESET } from "../Constants/productConstants";
+import { useToast } from "@chakra-ui/react";
 
 const PurchaseRequestScreen = () => {
   const [status, setStatus] = useState("Pending");
+  const toast = useToast();
+
   const dispatch = useDispatch();
- 
+
   const onclickHanlder = () => {
     dispatch({ type: PRODUCT_ASSIGN_SUPPLIER_RESET });
+    toast({
+      title: "Undo Successfull",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
   };
   return (
     <Flex direction="column" w="full">
@@ -55,7 +64,7 @@ const PurchaseRequestScreen = () => {
               p="4"
               mb="7"
             >
-              <Link onClick={onclickHanlder}>
+              <Link _hover={{ textDecor: "none" }} onClick={onclickHanlder}>
                 <Actions title="Undo Batch" />
               </Link>
               <AssignModal data={products} title="Assign Supplier" />

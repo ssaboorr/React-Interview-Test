@@ -6,8 +6,6 @@ import {
 import products from "../data/productData";
 
 export const assignSupplier = (supplier, productId) => async (dispatch) => {
-  let updated_products = [];
-
   try {
     dispatch({ type: PRODUCT_ASSIGN_SUPPLIER_REQUEST });
 
