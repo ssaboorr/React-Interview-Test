@@ -68,8 +68,8 @@ const ProductTable = () => {
                           }
                           onChange={(e) => setSupplier(e.target.value)}
                         >
-                          <option value="Alex Lee">Alex Lee</option>
-                          <option value="Alex Lee 2">Alex Lee 2</option>
+                          <option value="Alex Lee">Suppiler 1</option>
+                          <option value="Alex Lee 2">Suppiler 2</option>
                         </Select>
                         <Button type="submit">Assign</Button>
                       </Flex>
